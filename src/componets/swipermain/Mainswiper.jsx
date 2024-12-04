@@ -6,8 +6,6 @@ const Mainswiper = () => {
   return (
     <>
       <div className="flex justify-center mt-12">
-        {" "}
-        {/* O'rtaga joylashtirish uchun */}
         <Swiper
           slidesPerView={1}
           spaceBetween={10}

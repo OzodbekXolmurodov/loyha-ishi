@@ -20,11 +20,11 @@ const Header = () => {
             <LuAirplay className="ml-2 text-xl" />
             Афиша
           </NavLink>
-          <NavLink className={"navber__link text-xs"} to="/about">
+          <NavLink className={"navber__link text-xs"} to="/afisha">
             <LuGalleryHorizontal className="ml-3  text-xl" />
             Сеансы
           </NavLink>
-          <NavLink className={"navber__link text-xs"} to="/about">
+          <NavLink className={"navber__link text-xs"} to="/chipta">
             <LuArchive className="ml-2  text-xl" />
             Билеты
           </NavLink>

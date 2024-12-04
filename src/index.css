@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navber__link.active {
+  color: #c61f1f;
+}
+.img {
+  height: 640px;
+  border-radius: 12px;
+}

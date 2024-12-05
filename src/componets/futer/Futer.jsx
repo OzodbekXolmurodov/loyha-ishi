@@ -18,7 +18,7 @@ import futerimg3 from "../../assets/question-line.svg";
 const Futer = () => {
   return (
     <>
-      <div className="container flex justify-between items-center bg-[#11111190] p-7 rounded-xl">
+      <div className="container flex justify-between items-center bg-[#11111190] p-7 rounded-xl mb-[20px]">
         <div>
           <img className="mb-12" src={futerlogo} alt="" />
           <img className="mb-2" src={futerplay} alt="" />

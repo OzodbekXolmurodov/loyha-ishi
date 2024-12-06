@@ -34,9 +34,12 @@ const Swaper = () => {
                   alt={movie.title}
                 />
                 <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center">
-                  <h2 className="text-3xl text-white font-extrabold mb-4">
+                  <h2 className="text-3xl text-white font-extrabold mb-2">
                     {movie.title}
                   </h2>
+                  <p className="text-xl text-white font-mono mb-3">
+                    {movie.release_date}
+                  </p>
                   <button className="text-colorsMain rounded-xl flex gap-2 items-center bg-colorText pt-2 pb-2 pl-[150px] pr-[150px] font-s hover:text-colorText transition duration-300 ease-in-out transform hover:bg-colorsMain hover:scale-110">
                     <IoPlayOutline className="text-xl " />
                     Смотреть

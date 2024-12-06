@@ -4,17 +4,17 @@ import Navber from "./pages/navbar/Navber";
 import Afish from "./pages/afish/Afish";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
+import Dtail from "./pages/dtail/Dtail";
 
 function App() {
   return (
     <Routes>
-      {" "}
-      {/* Faqat Routes va Route ishlatiladi */}
       <Route path="/" element={<List />}>
-        <Route index element={<Home />} /> {/* Default route (Home) */}
+        <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/chipta" element={<Navber />} />
         <Route path="/afisha" element={<Afish />} />
+        <Route path="/movie/:id" element={<Dtail />} />
       </Route>
       <Route
         path="*"

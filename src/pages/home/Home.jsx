@@ -5,8 +5,10 @@ import Mainswiper from "../../componets/swipermain/Mainswiper";
 
 const Home = () => (
   <>
-    <Swaper />
-    <Mainswiper />
+    <div className=" dark:bg-slate-950 dark:text-warmGray-300">
+      <Swaper />
+      <Mainswiper />
+    </div>
   </>
 );
 

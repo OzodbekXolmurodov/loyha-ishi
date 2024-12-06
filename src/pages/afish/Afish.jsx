@@ -3,7 +3,7 @@ import Prodacts from "../../componets/prodacts/Prodacts";
 
 const Afish = () => {
   return (
-    <div>
+    <div className=" dark:bg-slate-950 dark:text-warmGray-300">
       <Prodacts />
     </div>
   );

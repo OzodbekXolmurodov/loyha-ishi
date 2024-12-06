@@ -57,10 +57,10 @@ const Mainswiper = () => {
                 alt="Image"
               />
               <div className="absolute inset-0 flex flex-col justify-end items-center opacity-0 group-hover:opacity-100 transform translate-y-5 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
-                <h2 className="w-[300px] text-white text-3xl font-bold mb-[5px] text-center group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-900 group-hover:bg-clip-text group-hover:text-transparent">
+                <h2 className="text-[#a7a2a2] text-4xl w-[300px] font-bold mb-3 text-center">
                   {movie.title}
                 </h2>
-                <p className="text-white text-xl mb-[50px] group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-900 group-hover:bg-clip-text group-hover:text-transparent">
+                <p className="text-[#c6a7a7]  text-2xl text-center mb-[50px]">
                   {movie.release_date}
                 </p>
               </div>
@@ -99,10 +99,10 @@ const Mainswiper = () => {
                 alt="Image"
               />
               <div className="absolute inset-0 flex flex-col justify-end items-center opacity-0 group-hover:opacity-100 transform translate-y-5 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
-                <h2 className="text-white text-3xl font-bold mb-[5px] text-center group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-900 group-hover:bg-clip-text group-hover:text-transparent">
+                <h2 className="text-[#a7a2a2] text-4xl w-[300px] font-bold mb-3 text-center">
                   {movie.title}
                 </h2>
-                <p className="text-white text-xl mb-[50px] group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-900 group-hover:bg-clip-text group-hover:text-transparent">
+                <p className="text-[#c6a7a7]  text-2xl text-center mb-[50px]">
                   {movie.release_date}
                 </p>
               </div>

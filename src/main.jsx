@@ -6,7 +6,6 @@ import { store } from "./redux";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
-// Faqat index.js faylida Router (BrowserRouter) ishlatiladi
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <BrowserRouter>

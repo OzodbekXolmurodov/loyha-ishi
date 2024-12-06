@@ -1,48 +1,75 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logotip.svg";
 import { LuAirplay, LuArchive, LuGalleryHorizontal } from "react-icons/lu";
 import { IoSearch } from "react-icons/io5";
-import { FaSun } from "react-icons/fa";
+import { FaSun, FaMoon } from "react-icons/fa";
 
 const Header = () => {
-  const darkMode = () => {
-    document.body.classList.toggle("dark");
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
   };
+
+  useEffect(() => {
+    const savedMode = localStorage.getItem("darkMode") === "true";
+    setIsDarkMode(savedMode);
+    if (savedMode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("darkMode", isDarkMode);
+    if (isDarkMode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [isDarkMode]);
+
   return (
-    <>
-      <div className="container flex justify-between items-center mt-3 mb-3">
+    <div className="dark:bg-slate-950 dark:text-warmGray-300">
+      <div className="container flex justify-between items-center pt-3 pb-3">
         <NavLink className={"navber__link "} to="/">
           <img src={logo} alt="" />
         </NavLink>
-        <div className="flex items-center gap-14 ">
-          <NavLink className={"navber__link  text-xs"} to="/about">
+        <div className="flex items-center gap-14">
+          <NavLink className={"navber__link text-xs"} to="/about">
             <LuAirplay className="ml-2 text-xl" />
             Афиша
           </NavLink>
           <NavLink className={"navber__link text-xs"} to="/afisha">
-            <LuGalleryHorizontal className="ml-3  text-xl" />
+            <LuGalleryHorizontal className="ml-3 text-xl" />
             Сеансы
           </NavLink>
           <NavLink className={"navber__link text-xs"} to="/chipta">
-            <LuArchive className="ml-2  text-xl" />
+            <LuArchive className="ml-2 text-xl" />
             Билеты
           </NavLink>
           <div className="text-xs">
-            <IoSearch className="ml-1  text-xl" />
+            <IoSearch className="ml-1 text-xl" />
             Поиск
           </div>
         </div>
-        <div>
-          <button className="p-4  rounded-3xl " onClick={darkMode}>
-            <FaSun />
+        <div className="flex gap-5">
+          <button
+            className={`p-4 rounded-full transition-all duration-300 ease-in-out ${
+              isDarkMode ? "bg-gray-800 text-white" : "bg-gray-200 text-black"
+            }`}
+            onClick={toggleDarkMode}
+          >
+            {isDarkMode ? <FaMoon /> : <FaSun />}
           </button>
           <button className="pl-9 pr-9 pt-2 pb-2 rounded-md text-slate-50 bg-colorsMain">
             Войти
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -33,7 +33,7 @@ const Header = () => {
 
   return (
     <div className="dark:bg-slate-950 dark:text-warmGray-300">
-      <div className="container flex justify-between items-center pt-3 pb-3">
+      <div className="container flex justify-between items-center pt-3 pb-3 pl-12 pr-12">
         <NavLink className={"navber__link "} to="/">
           <img src={logo} alt="" />
         </NavLink>

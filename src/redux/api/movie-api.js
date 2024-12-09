@@ -3,13 +3,37 @@ import { api } from "./index";
 export const movieApi = api.injectEndpoints({
   endpoints: (build) => ({
     getMovie: build.query({
-      query: ({ type, parames }) => ({
+      query: ({ type, params }) => ({
         url: `/movie/${type}`,
-        parames,
+        params,
+      }),
+      providesTags: ["Movie"],
+    }),
+    getMovieDiscover: build.query({
+      query: (params) => ({
+        url: `/discover/movie`,
+        params,
+      }),
+      providesTags: ["Movie"],
+    }),
+    getDetail: build.query({
+      query: (id) => ({
+        url: `/movie/${id}`,
+      }),
+      providesTags: ["Movie"],
+    }),
+    getDetailImg: build.query({
+      query: (id) => ({
+        url: `/movie/${id}/images`,
       }),
       providesTags: ["Movie"],
     }),
   }),
 });
 
-export const { useGetMovieQuery } = movieApi;
+export const {
+  useGetMovieQuery,
+  useGetMovieDiscoverQuery,
+  useGetDetailQuery,
+  useGetDetailImgQuery,
+} = movieApi;

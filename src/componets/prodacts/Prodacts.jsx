@@ -3,7 +3,7 @@ import { useGetMovieQuery } from "../../redux/api/movie-api";
 import { MOVIE_LISTS } from "../../statik";
 import Pagination from "@mui/material/Pagination";
 import PaginationItem from "@mui/material/PaginationItem";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
 
 const Products = () => {
   const [params, setParams] = useSearchParams();
@@ -17,31 +17,46 @@ const Products = () => {
     const updatedParams = new URLSearchParams(params);
     updatedParams.set("count", value);
     setParams(updatedParams);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleTypeChange = (path) => {
     setType(path);
     setPage(1);
     setParams({ path, count: 1 });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <>
-      <div className="flex gap-4 container">
-        {MOVIE_LISTS?.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => handleTypeChange(item.path)}
-            className={`border p-3 px-6 rounded-full mt-5 mb-10 text-sm font-medium transition-all duration-300 ${
-              type === item.path
-                ? "bg-colorsMain text-white dark:bg-colorsMain dark:text-white shadow-lg"
-                : "bg-gray-200 text-black dark:bg-gray-700 dark:text-white dark:border-gray-600 border-2 hover:bg-colorsMain hover:text-white"
-            }`}
-          >
-            {item.title}
-          </button>
-        ))}
+      <div className="flex container items-center justify-between">
+        <div className="flex gap-4 container">
+          {MOVIE_LISTS?.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => handleTypeChange(item.path)}
+              className={`border p-3 px-6 rounded-full mt-5 mb-10 text-sm font-medium transition-all duration-300 ${
+                type === item.path
+                  ? "bg-colorsMain text-white dark:bg-colorsMain dark:text-white shadow-lg"
+                  : "bg-gray-200 text-black dark:bg-gray-700 dark:text-white dark:border-gray-600 border-2 "
+              }`}
+            >
+              {item.title}
+            </button>
+          ))}
+        </div>
+        <div className="flex gap-4 pr-[50px]">
+          <NavLink className={"navber__link text-xs"} to="/about">
+            <button
+              className={`border p-3 px-9 rounded-full mt-5 mb-10 text-sm font-medium transition-all duration-300 ${"bg-gray-200 text-black dark:bg-gray-700 dark:text-white dark:border-gray-600 border-2"}`}
+            >
+              Жанр
+            </button>
+          </NavLink>
+        </div>
       </div>
+
       <div className="container flex flex-wrap justify-between gap-6">
         {data?.results?.map((product) => (
           <div className="w-[260px] mb-12" key={product.id}>
@@ -62,6 +77,7 @@ const Products = () => {
           </div>
         ))}
       </div>
+
       <div className="flex justify-center mb-14 mt-5">
         <Pagination
           count={data?.total_pages > 500 ? 500 : data?.total_pages}

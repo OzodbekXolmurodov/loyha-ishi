@@ -50,10 +50,10 @@ const Header = () => {
             <LuArchive className="ml-2 text-xl" />
             Билеты
           </NavLink>
-          <div className="text-xs">
+          <NavLink className={"navber__link text-xs"} to="/sorch">
             <IoSearch className="ml-1 text-xl" />
             Поиск
-          </div>
+          </NavLink>
         </div>
         <div className="flex gap-5">
           <button

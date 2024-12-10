@@ -5,6 +5,7 @@ import Afish from "./pages/afish/Afish";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Dtail from "./pages/dtail/Dtail";
+import Sorch from "./pages/sorch/Sorch";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/chipta" element={<Navber />} />
         <Route path="/afisha" element={<Afish />} />
+        <Route path="/sorch" element={<Sorch />} />
+
         <Route path="/movie/:id" element={<Dtail />} />
       </Route>
       <Route

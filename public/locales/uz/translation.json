@@ -1,0 +1,23 @@
+{
+  "header": {
+    "home": "Felter",
+    "about": "Kategoriya",
+    "ticket": "Chipta",
+    "search": "Qidiruv",
+    "access": "Kirish"
+  },
+  "futer": {
+    "a": "Biz haqimizda",
+    "b": "Ommaviy taklif",
+    "c": "Reklama",
+    "d": "F.A.K",
+    "e": "Kontaktlar",
+    "f": "Kategoriyalar",
+    "g": "Kino",
+    "i": "Teatr",
+    "j": "Konsertlar",
+    "h": "Sport",
+    "k": "Biz bilan bog'lanish",
+    "l": "Ijtimoiy tarmoqlar"
+  }
+}

@@ -16,11 +16,15 @@
   border: 1px solid #322d2d;
 }
 body {
-  background-color: #fafafa; /* Light mode uchun fon rangi */
-  color: #333333; /* Light mode uchun matn rangi */
+  background-color: #fafafa;
+  color: #333333;
 }
 
 body.dark {
-  background-color: #020617; /* Dark mode fon rangi */
-  color: #d1d5db; /* Dark mode matn rangi */
+  background-color: #020617;
+  color: #d1d5db;
+}
+
+input:focus {
+  outline: none;
 }

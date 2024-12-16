@@ -12,72 +12,73 @@ import futerimg8 from "../../assets/basketball-line.png";
 import futerimg9 from "../../assets/instagram-line.png";
 import futerimg10 from "../../assets/facebook-circle-line.png";
 import futerimg11 from "../../assets/youtube-line.png";
-
 import futerimg3 from "../../assets/question-line.svg";
+import { useTranslation } from "react-i18next";
 
 const Futer = () => {
+  const { t } = useTranslation();
+
   return (
-    <>
-      <div className=" dark:bg-slate-950 dark:text-warmGray-300">
-        <div className="container flex justify-between items-center bg-[#11111190] p-7 rounded-xl mb-[20px] ">
-          <div>
-            <img className="mb-12" src={futerlogo} alt="" />
-            <img className="mb-2" src={futerplay} alt="" />
-            <img src={futeraple} alt="" />
+    <div className="dark:bg-slate-950 dark:text-warmGray-300">
+      <div className="container flex flex-wrap justify-between items-start bg-[#11111190] p-7 rounded-xl mb-5">
+        <div className="mb-8">
+          <img className="mb-6" src={futerlogo} alt="Logo" />
+          <img className="mb-2" src={futerplay} alt="Google Play" />
+          <img src={futeraple} alt="Apple Store" />
+        </div>
+
+        <div className="mb-8">
+          <p className="text-white mb-4 font-semibold">{t("futer.a")}</p>
+          <div className="flex items-center gap-2 mb-3">
+            <img src={futerimg} alt="offer" className="w-5 h-5" />
+            <span>{t("futer.b")}</span>
           </div>
-          <div>
-            <p className="text-[#fff] mb-3 font-semibold">О нас</p>
-            <div className="flex gap-1 mb-3">
-              <img src={futerimg} alt="" />
-              Публичная оферта
-            </div>
-            <div className="flex gap-1 mb-3">
-              <img src={futerimg2} alt="" />
-              Реклама
-            </div>
-            <div className="flex gap-1 mb-3">
-              <img src={futerimg3} alt="" />
-              F.A.Q
-            </div>
-            <div className="flex gap-1 mb-3">
-              <img src={futerimg4} alt="" />
-              Контакты
-            </div>
+          <div className="flex items-center gap-2 mb-3">
+            <img src={futerimg2} alt="reklama" className="w-5 h-5" />
+            <span>{t("futer.c")}</span>
           </div>
-          <div>
-            <p className="text-[#fff] mb-3 font-semibold">Категории</p>
-            <div className="flex gap-1 mb-3">
-              <img src={futerimg5} alt="" />
-              Кино
-            </div>
-            <div className="flex gap-1 mb-3">
-              <img src={futerimg6} alt="" />
-              Театр
-            </div>
-            <div className="flex gap-1 mb-3">
-              <img src={futerimg7} alt="" />
-              Концерты
-            </div>
-            <div className="flex gap-1 mb-3">
-              <img src={futerimg8} alt="" />
-              Спорт
-            </div>
+          <div className="flex items-center gap-2 mb-3">
+            <img src={futerimg3} alt="faq" className="w-5 h-5" />
+            <span>{t("futer.d")}</span>
           </div>
-          <div>
-            <p className="text-[#fff] mb-3 font-semibold">Связаться с нами</p>
-            <h2 className="text-[#C61F1F] text-xl mb-[50px] ">
-              +998 (95) 897-33-38
-            </h2>
-            <p className="text-[#fff] mb-3 font-semibold">Социальные сети</p>
-            <div className="flex gap-1">
-              <img src={futerimg9} alt="" />
-              <img src={futerimg10} alt="" />
-              <img src={futerimg11} alt="" />
-            </div>
+          <div className="flex items-center gap-2 mb-3">
+            <img src={futerimg4} alt="contacts" className="w-5 h-5" />
+            <span>{t("futer.e")}</span>
+          </div>
+        </div>
+
+        <div className="mb-8">
+          <p className="text-white mb-4 font-semibold">{t("futer.f")}</p>
+          <div className="flex items-center gap-2 mb-3">
+            <img src={futerimg5} alt="kino" className="w-5 h-5" />
+            <span>{t("futer.g")}</span>
+          </div>
+          <div className="flex items-center gap-2 mb-3">
+            <img src={futerimg6} alt="teatr" className="w-5 h-5" />
+            <span>{t("futer.i")}</span>
+          </div>
+          <div className="flex items-center gap-2 mb-3">
+            <img src={futerimg7} alt="konsert" className="w-5 h-5" />
+            <span>{t("futer.j")}</span>
+          </div>
+          <div className="flex items-center gap-2 mb-3">
+            <img src={futerimg8} alt="sport" className="w-5 h-5" />
+            <span>{t("futer.h")}</span>
+          </div>
+        </div>
+
+        <div className="mb-8">
+          <p className="text-white mb-4 font-semibold">{t("futer.k")}</p>
+          <h2 className="text-red-500 text-xl mb-5">+998 (95) 897-33-38</h2>
+          <p className="text-white mb-4 font-semibold">{t("futer.l")}</p>
+          <div className="flex gap-4">
+            <img src={futerimg9} alt="instagram" className="w-6 h-6" />
+            <img src={futerimg10} alt="facebook" className="w-6 h-6" />
+            <img src={futerimg11} alt="youtube" className="w-6 h-6" />
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

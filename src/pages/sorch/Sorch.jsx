@@ -42,14 +42,18 @@ const Sorch = () => {
   return (
     <>
       <div className="container">
-        <form onSubmit={handleSubmet} action="" className="relative mb-14 mt-5">
+        <form
+          onSubmit={handleSubmet}
+          action=""
+          className="relative mb-14 mt-5 "
+        >
           <input
             ref={searchValue}
             type="text"
             defaultValue={search}
-            placeholder="Filmni qidirish"
-            className="w-full p-3 pr-14 text-base rounded-full border-2 dark:border-gray-700 bg-white dark:bg-gray-800 
-            text-black dark:text-white transition-all focus:outline-none"
+            placeholder="Filmni qidirish..."
+            className="w-full p-3 pr-14 text-base rounded-full border-2 pl-10 dark:border-gray-700 bg-white dark:bg-gray-800 
+            text-black dark:text-white transition-all "
           />
           <button
             type="submit"
@@ -60,8 +64,8 @@ const Sorch = () => {
           </button>
         </form>
         {localData?.length === 0 && (
-          <div className="mt-10 text-center h-[300px]">
-            <p className="text-lg text-gray-700 dark:text-white mb-5 mt-[200px]">
+          <div className="mt-10 text-center">
+            <p className="text-lg text-gray-700 dark:text-white mb-5 pt-[150px]">
               По вашему запросу ничего не найдено
             </p>
             <button
@@ -73,7 +77,7 @@ const Sorch = () => {
           </div>
         )}
 
-        <div className="container flex flex-wrap justify-between gap-6">
+        <div className="container flex flex-wrap justify-between gap-6 mb-10">
           {localData?.map((product) => (
             <div className="w-[260px] mb-12" key={product.id}>
               <img

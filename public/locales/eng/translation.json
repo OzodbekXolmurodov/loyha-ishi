@@ -1,0 +1,23 @@
+{
+  "header": {
+    "home": "Felter",
+    "about": "Category",
+    "ticket": "Ticket",
+    "search": "Search",
+    "access": "Enter"
+  },
+  "futer": {
+    "a": "about Us",
+    "b": "Public offering",
+    "c": "Advertising",
+    "d": "F.A.K",
+    "e": "Contacts",
+    "f": "Categories",
+    "g": "Kino",
+    "i": "Cinema",
+    "j": "Concerts",
+    "h": "Sports",
+    "k": "Contact us",
+    "l": "Social networks"
+  }
+}

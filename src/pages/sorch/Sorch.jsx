@@ -2,6 +2,8 @@ import React, { useRef, useState, useEffect } from "react";
 import { useGetMovieBySearchQuery } from "../../redux/api/movie-api";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
+import { FaNotdef } from "react-icons/fa6";
+import { MdOutlineDoNotDisturb } from "react-icons/md";
 
 const Sorch = () => {
   const searchValue = useRef(null);
@@ -40,65 +42,66 @@ const Sorch = () => {
   }, [data]);
 
   return (
-    <>
-      <div className="container">
-        <form
-          onSubmit={handleSubmet}
-          action=""
-          className="relative mb-14 mt-5 "
+    <div className="container">
+      <form onSubmit={handleSubmet} action="" className="relative mb-14 mt-5 ">
+        <input
+          ref={searchValue}
+          type="text"
+          defaultValue={search}
+          placeholder="Filmni qidirish..."
+          className="w-full p-3 pr-14 text-base rounded-full border-2 pl-10 dark:border-gray-700 bg-white dark:bg-gray-800 
+          text-black dark:text-white transition-all "
+        />
+        <button
+          type="submit"
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 text-gray-500 dark:text-gray-300 
+          transition-all duration-300"
         >
-          <input
-            ref={searchValue}
-            type="text"
-            defaultValue={search}
-            placeholder="Filmni qidirish..."
-            className="w-full p-3 pr-14 text-base rounded-full border-2 pl-10 dark:border-gray-700 bg-white dark:bg-gray-800 
-            text-black dark:text-white transition-all "
-          />
-          <button
-            type="submit"
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 text-gray-500 dark:text-gray-300 
-            transition-all duration-300"
-          >
-            <AiOutlineSearch size={24} />
-          </button>
-        </form>
-        {localData?.length === 0 && (
-          <div className="mt-10 text-center">
-            <p className="text-lg text-gray-700 dark:text-white mb-5 pt-[150px]">
-              По вашему запросу ничего не найдено
-            </p>
-            <button
-              onClick={() => navigate("/")}
-              className="bg-colorsMain text-white py-3 px-8 rounded-full"
-            >
-              Иди домой
-            </button>
-          </div>
-        )}
+          <AiOutlineSearch size={24} />
+        </button>
+      </form>
 
-        <div className="container flex flex-wrap justify-between gap-6 mb-10">
-          {localData?.map((product) => (
-            <div className="w-[260px] mb-12" key={product.id}>
-              <img
-                onClick={() => navigate(`/movie/${product.id}`)}
-                className="w-[260px] h-[380px] rounded-3xl cursor-pointer transition-all duration-300 hover:scale-105"
-                src={`${import.meta.env.VITE_IMAGE_URL}${product.poster_path}`}
-                alt={product.original_title}
-              />
-              <div className="flex items-center justify-between mt-3 mb-5">
-                <h2 className="text-xl font-semibold text-black dark:text-white transition-colors duration-300">
-                  {product.original_title}
-                </h2>
-                <p className="mr-2 rounded-full p-3 bg-gray-200 text-black dark:bg-gray-700 dark:text-white dark:border-white border-2 transition-all duration-300">
-                  {product.vote_average.toFixed(1)}
-                </p>
-              </div>
-            </div>
-          ))}
+      {!search && !localData && (
+        <div className="mt-20 mb-20 text-center flex justify-center items-center">
+          <MdOutlineDoNotDisturb className="text-[300px] text-stone-300 dark:text-gray-700  " />
         </div>
+      )}
+
+      {localData?.length === 0 && search && (
+        <div className="mt-10 text-center">
+          <p className="text-lg text-gray-700 dark:text-white mb-5 pt-[150px]">
+            По вашему запросу ничего не найдено
+          </p>
+          <button
+            onClick={() => navigate("/")}
+            className="bg-colorsMain text-white py-3 px-8 rounded-full mb-[158px]"
+          >
+            Иди домой
+          </button>
+        </div>
+      )}
+
+      <div className="container flex flex-wrap justify-between gap-6 mb-10">
+        {localData?.map((product) => (
+          <div className="w-[260px] mb-12" key={product.id}>
+            <img
+              onClick={() => navigate(`/movie/${product.id}`)} 
+              className="w-[260px] h-[380px] rounded-3xl cursor-pointer transition-all duration-300 hover:scale-105"
+              src={`${import.meta.env.VITE_IMAGE_URL}${product.poster_path}`}
+              alt={product.original_title}
+            />
+            <div className="flex items-center justify-between mt-3 mb-5">
+              <h2 className="text-xl font-semibold text-black dark:text-white transition-colors duration-300">
+                {product.original_title}
+              </h2>
+              <p className="mr-2 rounded-full p-3 bg-gray-200 text-black dark:bg-gray-700 dark:text-white dark:border-white border-2 transition-all duration-300">
+                {product.vote_average.toFixed(1)}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 

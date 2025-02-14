@@ -49,18 +49,19 @@ const Mainswiper = () => {
           {data?.results?.map((movie) => (
             <SwiperSlide
               key={movie.id}
-              className="relative h-[400px] w-[280px] overflow-hidden group"
+              className="h-[470px] w-[300px] flex flex-col items-center"
             >
               <img
-                className="h-full object-cover rounded-xl w-[315px]"
+                className="h-[400px] object-cover rounded-xl w-[300px]"
                 src={import.meta.env.VITE_IMAGE_URL + movie.poster_path}
                 alt="Image"
               />
-              <div className="absolute inset-0 flex flex-col justify-end items-center opacity-0 group-hover:opacity-100 transform translate-y-5 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
-                <h2 className="text-[#a7a2a2] text-4xl w-[300px] font-bold mb-3 text-center">
+
+              <div className="w-full ml-[75px] mt-2">
+                <h2 className="text-lg font-bold   dark:text-gray-400">
                   {movie.title}
                 </h2>
-                <p className="text-[#c6a7a7]  text-2xl text-center mb-[50px]">
+                <p className="text-sm   dark:text-gray-500">
                   {movie.release_date}
                 </p>
               </div>
@@ -91,18 +92,19 @@ const Mainswiper = () => {
           {top_ratedData?.results?.map((movie) => (
             <SwiperSlide
               key={movie.id}
-              className="relative h-[400px] w-[280px] overflow-hidden group"
+              className="h-[470px] w-[300px] flex flex-col items-center"
             >
               <img
-                className="h-full w-[315px] object-cover rounded-xl"
+                className="h-[400px] object-cover rounded-xl w-[300px]"
                 src={import.meta.env.VITE_IMAGE_URL + movie.poster_path}
                 alt="Image"
               />
-              <div className="absolute inset-0 flex flex-col justify-end items-center opacity-0 group-hover:opacity-100 transform translate-y-5 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
-                <h2 className="text-[#a7a2a2] text-4xl w-[300px] font-bold mb-3 text-center">
+
+              <div className="w-full ml-[75px] mt-2">
+                <h2 className="text-lg font-bold   dark:text-gray-400">
                   {movie.title}
                 </h2>
-                <p className="text-[#c6a7a7]  text-2xl text-center mb-[50px]">
+                <p className="text-sm   dark:text-gray-500">
                   {movie.release_date}
                 </p>
               </div>

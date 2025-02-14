@@ -29,7 +29,7 @@ const Swaper = () => {
             <SwiperSlide key={movie.id}>
               <div className="container">
                 <img
-                  className="w-full h-[500px] object-cover rounded-lg"
+                  className="w-full h-[555px] object-cover rounded-xl"
                   src={import.meta.env.VITE_IMAGE_URL + movie.backdrop_path}
                   alt={movie.title}
                 />

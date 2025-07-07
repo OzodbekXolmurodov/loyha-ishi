@@ -11,6 +11,10 @@ const Swaper = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const { data } = useGetMovieQuery({ type: "popular", params: { page: 1 } });
 
+  const slidesCount = data?.results?.length || 0;
+
+  const isLoopEnabled = slidesCount > 4;
+
   return (
     <>
       <div className="flex flex-col items-center gap-5">
@@ -19,7 +23,7 @@ const Swaper = () => {
             "--swiper-navigation-color": "#fff",
             "--swiper-pagination-color": "#fff",
           }}
-          loop={true}
+          loop={isLoopEnabled}
           spaceBetween={10}
           thumbs={{ swiper: thumbsSwiper }}
           modules={[FreeMode, Thumbs]}
@@ -27,7 +31,7 @@ const Swaper = () => {
         >
           {data?.results?.map((movie) => (
             <SwiperSlide key={movie.id}>
-              <div className="container">
+              <div className="container relative">
                 <img
                   className="w-full h-[555px] object-cover rounded-xl"
                   src={import.meta.env.VITE_IMAGE_URL + movie.backdrop_path}
@@ -49,11 +53,12 @@ const Swaper = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+
         <Swiper
           onSwiper={setThumbsSwiper}
-          loop={true}
+          loop={isLoopEnabled}
           spaceBetween={5}
-          slidesPerView={4}
+          slidesPerView={slidesCount < 4 ? slidesCount : 4}
           freeMode={true}
           watchSlidesProgress={true}
           modules={[FreeMode, Thumbs]}
@@ -64,7 +69,7 @@ const Swaper = () => {
               <img
                 className="w-14 h-14 rounded-md object-cover transition-transform duration-300 ease-in-out transform hover:scale-110"
                 src={import.meta.env.VITE_IMAGE_URL + movie.backdrop_path}
-                alt={movie.title}
+                alt="rasim"
               />
             </SwiperSlide>
           ))}

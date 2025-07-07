@@ -47,16 +47,12 @@ const Mainswiper = () => {
           className="mySwiper container mb-[20px] w-full"
         >
           {data?.results?.map((movie) => (
-            <SwiperSlide
-              key={movie.id}
-              className="h-[470px] w-[300px] flex flex-col items-center"
-            >
+            <SwiperSlide key={movie.id}>
               <img
                 className="h-[400px] object-cover rounded-xl w-[300px]"
                 src={import.meta.env.VITE_IMAGE_URL + movie.poster_path}
                 alt="Image"
               />
-
               <div className="w-full ml-[75px] mt-2">
                 <h2 className="text-lg font-bold   dark:text-gray-400">
                   {movie.title}
